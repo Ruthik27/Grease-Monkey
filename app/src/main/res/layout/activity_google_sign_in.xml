@@ -3,7 +3,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_100"
+    android:background="@color/white"
     android:orientation="vertical"
     android:weightSum="4">
 
@@ -17,23 +17,25 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="250dp"
         android:layout_weight="3"
-        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <ImageView
-            style="@style/ThemeOverlay.FirebaseIcon"
             android:id="@+id/googleIcon"
+            style="@style/ThemeOverlay.FirebaseIcon"
+            android:layout_width="246dp"
+            android:layout_height="159dp"
             android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@mipmap/firebase_lockup_400"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_gravity="center_horizontal"
+            android:scrollbarSize="@android:dimen/notification_large_icon_height"
+            android:src="@mipmap/firebase_lockup_400" />
 
         <TextView
             android:id="@+id/titleText"
-            android:layout_width="wrap_content"
+            android:layout_width="265dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="@dimen/title_bottom_margin"
             android:text="@string/google_title_text"
             android:theme="@style/ThemeOverlay.MyTitleText" />
@@ -41,12 +43,40 @@
         <TextView
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
+            android:layout_width="158dp"
+            android:layout_gravity="center_horizontal"
             android:text="@string/signed_out" />
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             tools:text="Firebase User ID: 123456789abc" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="377dp"
+            android:layout_height="149dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="The unauthorized reproduction or distribution of this copyrighted work is illegal. Criminal copyright infringement, including gain, is investigated byb the FBI and is punishable by up to 5 years in federal prison and a fine of $250,000."
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
 
     </LinearLayout>
 
@@ -70,29 +100,32 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
             android:visibility="gone"
             tools:visibility="visible">
 
             <Button
                 android:id="@+id/signOutButton"
-                android:layout_width="0dp"
-                android:layout_height="102dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
                 android:layout_weight="1"
                 android:text="@string/sign_out"
+                android:textSize="24sp"
+                android:gravity="bottom"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
 
             <Button
                 android:id="@+id/disconnectButton"
-                android:layout_width="0dp"
-                android:layout_height="122dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/button_horizontal_margin"
                 android:layout_marginEnd="@dimen/button_horizontal_margin"
                 android:layout_weight="1"
                 android:text="@string/disconnect"
+                android:textSize="24sp"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
         </LinearLayout>
 
