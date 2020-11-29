@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 
@@ -42,6 +43,9 @@ public class GoogleSignInActivity extends BaseActivity implements
     private TextView mStatusTextView;
     private TextView mDetailTextView;
 
+    public Button database;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,16 @@ public class GoogleSignInActivity extends BaseActivity implements
 
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
+
+        database = (Button) findViewById(R.id.button6);
+
+        database.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         /*mBinding = ActivityGoogleBinding.inflate(getLayoutInflater());

@@ -1,23 +1,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:weightSum="4">
+    android:weightSum="0">
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:indeterminate="true"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        style="?android:attr/progressBarStyleHorizontal"/>
+        android:indeterminate="true"
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:layout_weight="3"
         android:orientation="vertical">
 
@@ -26,8 +26,8 @@
             style="@style/ThemeOverlay.FirebaseIcon"
             android:layout_width="246dp"
             android:layout_height="159dp"
-            android:contentDescription="@string/desc_firebase_lockup"
             android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/desc_firebase_lockup"
             android:scrollbarSize="@android:dimen/notification_large_icon_height"
             android:src="@mipmap/firebase_lockup_400" />
 
@@ -64,27 +64,22 @@
             android:text="The unauthorized reproduction or distribution of this copyrighted work is illegal. Criminal copyright infringement, including gain, is investigated byb the FBI and is punishable by up to 5 years in federal prison and a fine of $250,000."
             android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
 
     </LinearLayout>
 
+
     <RelativeLayout
+        android:id="@+id/signOutAndDisconnect"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/grey_300">
+        android:background="@color/grey_300"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="gone"
+        tools:visibility="visible">
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/signInButton"
@@ -94,40 +89,79 @@
             android:visibility="visible"
             tools:visibility="gone" />
 
-        <LinearLayout
-            android:id="@+id/signOutAndDisconnect"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/signOutButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
-            android:visibility="gone"
-            tools:visibility="visible">
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_toEndOf="@+id/disconnectButton"
+            android:layout_toRightOf="@+id/disconnectButton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/sign_out"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:theme="@style/ThemeOverlay.MyDarkButton" />
 
-            <Button
-                android:id="@+id/signOutButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/button_horizontal_margin"
-                android:layout_marginEnd="@dimen/button_horizontal_margin"
-                android:layout_weight="1"
-                android:text="@string/sign_out"
-                android:textSize="24sp"
-                android:gravity="bottom"
-                android:theme="@style/ThemeOverlay.MyDarkButton" />
+        <Button
+            android:id="@+id/disconnectButton"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="2"
+            android:text="@string/disconnect"
+            android:textColor="#050000"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:theme="@style/ThemeOverlay.MyDarkButton" />
 
-            <Button
-                android:id="@+id/disconnectButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/button_horizontal_margin"
-                android:layout_marginEnd="@dimen/button_horizontal_margin"
-                android:layout_weight="1"
-                android:text="@string/disconnect"
-                android:textSize="24sp"
-                android:theme="@style/ThemeOverlay.MyDarkButton" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="Database"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Service"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginLeft="53dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginRight="54dp"
+            android:layout_toStartOf="@+id/button8"
+            android:layout_toLeftOf="@+id/button8"
+            android:layout_toEndOf="@+id/button6"
+            android:layout_toRightOf="@+id/button6"
+            android:gravity="center"
+            android:text="Maps"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
