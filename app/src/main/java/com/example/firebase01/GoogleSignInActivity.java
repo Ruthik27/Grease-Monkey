@@ -62,6 +62,15 @@ public class GoogleSignInActivity extends BaseActivity implements
         map = (Button) findViewById(R.id.button7);
         web = (Button) findViewById(R.id.button8);
 
+        
+        database.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
+                startActivity(intent);
+            }
+        });
+
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,16 +85,6 @@ public class GoogleSignInActivity extends BaseActivity implements
                 Intent intent = new Intent(GoogleSignInActivity.this, WebActivity.class);
                 startActivity(intent);
             }
-        });
-
-        database.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
-                startActivity(intent);
-            }
-
-
         });
 
 
