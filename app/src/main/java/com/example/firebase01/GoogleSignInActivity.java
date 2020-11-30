@@ -44,6 +44,8 @@ public class GoogleSignInActivity extends BaseActivity implements
     private TextView mDetailTextView;
 
     public Button database;
+    public Button map;
+    public Button web;
 
 
     @Override
@@ -54,7 +56,27 @@ public class GoogleSignInActivity extends BaseActivity implements
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
 
+
+
         database = (Button) findViewById(R.id.button6);
+        map = (Button) findViewById(R.id.button7);
+        web = (Button) findViewById(R.id.button8);
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( GoogleSignInActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GoogleSignInActivity.this, WebActivity.class);
+                startActivity(intent);
+            }
+        });
 
         database.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -62,6 +84,8 @@ public class GoogleSignInActivity extends BaseActivity implements
                 Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
                 startActivity(intent);
             }
+
+
         });
 
 

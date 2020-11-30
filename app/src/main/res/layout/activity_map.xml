@@ -2,25 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/textview3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginEnd="10dp"
-    android:layout_marginRight="10dp"
-    android:visibility="visible"
-    tools:context=".MapActivity">
+    tools:context=".WebActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text='tools:visibility = "visible" is used to manipulate view visibility on the IDE.It wont affect the view in the real time.It just used for Designing purpose in Android Studio  while  android:visibility = "visible" is the actual code which will be executed in run-time and will make changes to your views  Ref: http://tools.android.com/tips/layout-designtime-attributes'
+        android:text="WELCOME TO MAPS"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        tools:visibility="visible"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
