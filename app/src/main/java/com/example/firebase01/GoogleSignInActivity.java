@@ -197,12 +197,19 @@ public class GoogleSignInActivity extends BaseActivity implements
 
             findViewById(R.id.signInButton).setVisibility(View.GONE);
             findViewById(R.id.signOutAndDisconnect).setVisibility(View.VISIBLE);
+            findViewById(R.id.button6).setVisibility(View.VISIBLE);
+            findViewById(R.id.button7).setVisibility(View.VISIBLE);
+            findViewById(R.id.button8).setVisibility(View.VISIBLE);
         } else {
             mStatusTextView.setText(R.string.signed_out);
             mDetailTextView.setText(null);
 
             findViewById(R.id.signInButton).setVisibility(View.VISIBLE);
             findViewById(R.id.signOutButton).setVisibility(View.GONE);
+            findViewById(R.id.button6).setVisibility(View.GONE);
+            findViewById(R.id.button7).setVisibility(View.GONE);
+            findViewById(R.id.button8).setVisibility(View.GONE);
+
         }
     }
 
