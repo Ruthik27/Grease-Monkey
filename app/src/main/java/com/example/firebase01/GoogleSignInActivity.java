@@ -1,20 +1,23 @@
 package com.example.firebase01;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -22,14 +25,20 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+
 /*import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.quickstart.auth.R;
 import com.google.firebase.quickstart.auth.databinding.ActivityGoogleBinding;*/
 
+
+
+
+
 /**
  * Demonstrate Firebase Authentication using a Google ID Token.
  */
-public class GoogleSignInActivity extends BaseActivity implements
+public class GoogleSignInActivity extends AppCompatActivity implements
         View.OnClickListener {
 
     private static final String TAG = "GoogleActivity";
@@ -43,14 +52,20 @@ public class GoogleSignInActivity extends BaseActivity implements
     private TextView mStatusTextView;
     private TextView mDetailTextView;
 
-    public Button database;
-    public Button map;
-    public Button web;
+    public Button database1;
+    public Button map1;
+    public Button web1;
+
+
+    private GoogleMap map;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_google_sign_in);
 
         mStatusTextView = (TextView) findViewById(R.id.status);
@@ -58,12 +73,12 @@ public class GoogleSignInActivity extends BaseActivity implements
 
 
 
-        database = (Button) findViewById(R.id.button6);
-        map = (Button) findViewById(R.id.button7);
-        web = (Button) findViewById(R.id.button8);
+        database1 = (Button) findViewById(R.id.button6);
+        map1 = (Button) findViewById(R.id.button7);
+        web1 = (Button) findViewById(R.id.button8);
 
         
-        database.setOnClickListener(new View.OnClickListener(){
+        database1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
@@ -71,15 +86,19 @@ public class GoogleSignInActivity extends BaseActivity implements
             }
         });
 
-        map.setOnClickListener(new View.OnClickListener() {
+        map1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( GoogleSignInActivity.this, MapActivity.class);
-                startActivity(intent);
+                Intent intent = null, chooser=null;
+
+                intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("geo:19.076,72.8777"));
+                chooser = Intent.createChooser(intent,"Launch Maps");
+                startActivity(chooser);
             }
         });
 
-        web.setOnClickListener(new View.OnClickListener() {
+        web1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GoogleSignInActivity.this, WebActivity.class);
@@ -244,4 +263,6 @@ public class GoogleSignInActivity extends BaseActivity implements
             revokeAccess();
         }
     }
+
+
 }
