@@ -149,8 +149,7 @@ public class GoogleSignInActivity extends BaseActivity implements
 
     // [START auth_with_google]
     private void firebaseAuthWithGoogle(String idToken) {
-        // [START_EXCLUDE silent]
-        showProgressBar();
+        // [START_EXCLUDE silent];
         // [END_EXCLUDE]
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
@@ -170,7 +169,6 @@ public class GoogleSignInActivity extends BaseActivity implements
                         }
 
                         // [START_EXCLUDE]
-                        hideProgressBar();
                         // [END_EXCLUDE]
                     }
                 });
@@ -213,7 +211,6 @@ public class GoogleSignInActivity extends BaseActivity implements
     }
 
     private void updateUI(FirebaseUser user) {
-        hideProgressBar();
         if (user != null) {
             mStatusTextView.setText(getString(R.string.google_status_fmt, user.getEmail()));
             mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
