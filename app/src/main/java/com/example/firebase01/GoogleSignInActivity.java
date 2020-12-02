@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,27 +27,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-
-/*import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.quickstart.auth.R;
-import com.google.firebase.quickstart.auth.databinding.ActivityGoogleBinding;*/
-
-
-
-
-
-/**
- * Demonstrate Firebase Authentication using a Google ID Token.
- */
 public class GoogleSignInActivity extends AppCompatActivity implements
         View.OnClickListener {
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
-    // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
+
 
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
@@ -67,6 +55,11 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
 
         setContentView(R.layout.activity_google_sign_in);
+
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).commit();
 
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
@@ -107,69 +100,50 @@ public class GoogleSignInActivity extends AppCompatActivity implements
         });
 
 
-        /*mBinding = ActivityGoogleBinding.inflate(getLayoutInflater());
-        setContentView(mBinding.getRoot());
-        setProgressBar(mBinding.progressBar); */
 
-        // Button listeners
         findViewById(R.id.signInButton).setOnClickListener(this);
         findViewById(R.id.signOutButton).setOnClickListener(this);
         findViewById(R.id.disconnectButton).setOnClickListener(this);
 
-        // [START config_signin]
-        // Configure Google Sign In
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        // [END config_signin]
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // [START initialize_auth]
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
     }
 
-    // [START on_start_check_user]
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-    // [END on_start_check_user]
 
-    // [START onactivityresult]
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
+
                 Log.w(TAG, "Google sign in failed", e);
-                // [START_EXCLUDE]
+
                 updateUI(null);
-                // [END_EXCLUDE]
+
             }
         }
     }
-    // [END onactivityresult]
 
-    // [START auth_with_google]
     private void firebaseAuthWithGoogle(String idToken) {
-        // [START_EXCLUDE silent];
-        // [END_EXCLUDE]
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -187,25 +161,18 @@ public class GoogleSignInActivity extends AppCompatActivity implements
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
-                        // [END_EXCLUDE]
                     }
                 });
     }
-    // [END auth_with_google]
 
-    // [START signin]
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-    // [END signin]
 
     private void signOut() {
-        // Firebase sign out
         mAuth.signOut();
 
-        // Google sign out
         mGoogleSignInClient.signOut().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override
@@ -216,7 +183,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
     }
 
     private void revokeAccess() {
-        // Firebase sign out
         mAuth.signOut();
 
         // Google revoke access
@@ -252,6 +218,11 @@ public class GoogleSignInActivity extends AppCompatActivity implements
         }
     }
 
+    private  void button6Click(){
+        startActivity(new Intent("Firebase01.BaseActivity"));
+
+    }
+
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -262,6 +233,12 @@ public class GoogleSignInActivity extends AppCompatActivity implements
         } else if (i == R.id.disconnectButton) {
             revokeAccess();
         }
+        switch (v.getId()){
+            case R.id.button6:
+                button6Click();
+                break;
+        }
+
     }
 
 
