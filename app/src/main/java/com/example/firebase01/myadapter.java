@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -21,12 +22,20 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final model model) {
         holder.nametext.setText(model.getName());
         holder.coursetext.setText(model.getCourse());
         holder.emailtext.setText(model.getEmail());
         Glide.with(holder.img1.getContext()).load(model.getPurl()).into(holder.img1);
 
+                    holder.img1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            AppCompatActivity activity = (AppCompatActivity)view.getContext();
+                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new dscfragment(model.getName(),model.getCourse(),model.getEmail(),model.getPurl())).addToBackStack(null).commit();
+
+                        }
+                    });
 
     }
 
