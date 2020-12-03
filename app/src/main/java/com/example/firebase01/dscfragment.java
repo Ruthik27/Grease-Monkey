@@ -4,40 +4,32 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class dscfragment extends Fragment {
 
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+
     private String mParam1;
     private String mParam2;
-    String name,  course,  email,  purl;
+    RecyclerView recview;
+    myadapter adapter;
 
     public dscfragment() {
 
     }
 
-    public dscfragment(String name, String course, String email, String purl) {
-        this.name=name;
-        this.course=course;
-        this.email=email;
-        this.purl=purl;
-
-    }
-
-
-    public static dscfragment newInstance(String param1, String param2) {
-        dscfragment fragment = new dscfragment();
+    public static recfragment newInstance(String param1, String param2) {
+        recfragment fragment = new recfragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,26 +49,32 @@ public class dscfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view =inflater.inflate(R.layout.fragment_recfragment, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_dscfragment, container, false);
-        ImageView imageholder=view.findViewById(R.id.imageholder);
-        TextView nameholder=view.findViewById(R.id.nameholder);
-        TextView courseholder=view.findViewById(R.id.courseholder);
-        TextView emailholder=view.findViewById(R.id.emailholder);
+        recview=(RecyclerView)view.findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        nameholder.setText(name);
-        courseholder.setText(course);
-        emailholder.setText(email);
-        Glide.with(getContext()).load(purl).into(imageholder);
+        FirebaseRecyclerOptions<model> options =
+                new FirebaseRecyclerOptions.Builder<model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Brands"), model.class)
+                        .build();
+
+        adapter = new myadapter(options);
+        recview.setAdapter(adapter);
+
 
         return view;
     }
-    public void onBackPressed(){
 
-        AppCompatActivity activity = (AppCompatActivity)getContext();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).addToBackStack(null).commit();
-
-
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 }
