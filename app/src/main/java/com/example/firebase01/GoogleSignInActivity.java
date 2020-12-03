@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +34,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
     private FirebaseAuth mAuth;
 
-
     private GoogleSignInClient mGoogleSignInClient;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
@@ -44,22 +42,17 @@ public class GoogleSignInActivity extends AppCompatActivity implements
     public Button map1;
     public Button web1;
 
-
     private GoogleMap map;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         setContentView(R.layout.activity_google_sign_in);
 
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).commit();
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).commit();
 
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
@@ -74,8 +67,9 @@ public class GoogleSignInActivity extends AppCompatActivity implements
         database1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent ( GoogleSignInActivity.this , BaseActivity.class);
+                Intent intent = new Intent(GoogleSignInActivity.this,BaseActivity.class);
                 startActivity(intent);
+                setContentView(R.layout.activity_base);
             }
         });
 
@@ -185,7 +179,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
     private void revokeAccess() {
         mAuth.signOut();
 
-        // Google revoke access
         mGoogleSignInClient.revokeAccess().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override
@@ -232,11 +225,8 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             signOut();
         } else if (i == R.id.disconnectButton) {
             revokeAccess();
-        }
-        switch (v.getId()){
-            case R.id.button6:
-                button6Click();
-                break;
+        } else if (i == R.id.button6) {
+            button6Click();
         }
 
     }
