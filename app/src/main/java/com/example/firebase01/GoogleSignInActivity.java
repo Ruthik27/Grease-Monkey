@@ -69,7 +69,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             public void onClick(View v) {
                 Intent intent = new Intent(GoogleSignInActivity.this,BaseActivity.class);
                 startActivity(intent);
-                setContentView(R.layout.activity_base);
             }
         });
 
@@ -225,8 +224,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             signOut();
         } else if (i == R.id.disconnectButton) {
             revokeAccess();
-        } else if (i == R.id.button6) {
-            button6Click();
         }
 
     }
