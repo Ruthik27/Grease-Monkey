@@ -52,7 +52,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
 
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).commit();
+
 
         mStatusTextView = (TextView) findViewById(R.id.status);
         mDetailTextView = (TextView) findViewById(R.id.detail);
