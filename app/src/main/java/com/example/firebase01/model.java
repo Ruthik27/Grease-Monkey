@@ -1,26 +1,16 @@
 package com.example.firebase01;
 
-public class model {
-
-    String course,email,name,purl;
+public class model{
+    String email,name,origin,purl;
 
     public model() {
-
     }
 
-    public model(String course, String email, String name, String purl) {
-        this.course = course;
+    public model(String email, String name, String origin, String purl) {
         this.email = email;
         this.name = name;
+        this.origin = origin;
         this.purl = purl;
-    }
-
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
     }
 
     public String getEmail() {
@@ -39,6 +29,14 @@ public class model {
         this.name = name;
     }
 
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
     public String getPurl() {
         return purl;
     }
@@ -47,3 +45,8 @@ public class model {
         this.purl = purl;
     }
 }
+
+
+
+
+

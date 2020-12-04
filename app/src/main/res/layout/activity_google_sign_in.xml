@@ -135,6 +135,7 @@
             android:text="Database"
             android:textSize="14sp"
             android:visibility="gone"
+            android:onClick="sendMessageR"
             tools:visibility="visible"/>
 
         <Button

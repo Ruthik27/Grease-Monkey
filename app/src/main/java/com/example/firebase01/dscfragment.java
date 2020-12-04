@@ -21,8 +21,8 @@ public class dscfragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    RecyclerView recview;
-    myadapter adapter;
+    RecyclerView recview2;
+    myadapter2 adapter2;
 
     public dscfragment() {
 
@@ -49,18 +49,18 @@ public class dscfragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_recfragment, container, false);
+        View view =inflater.inflate(R.layout.fragment_dscfragment, container, false);
 
-        recview=(RecyclerView)view.findViewById(R.id.recview);
-        recview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recview2=(RecyclerView)view.findViewById(R.id.recview2);
+        recview2.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Brands"), model.class)
+        FirebaseRecyclerOptions<model2> options2 =
+                new FirebaseRecyclerOptions.Builder<model2>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Brands").child("details"), model2.class)
                         .build();
 
-        adapter = new myadapter(options);
-        recview.setAdapter(adapter);
+        adapter2 = new myadapter2(options2);
+        recview2.setAdapter(adapter2);
 
 
         return view;
@@ -69,12 +69,12 @@ public class dscfragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        adapter2.startListening();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        adapter.stopListening();
+        adapter2.stopListening();
     }
 }

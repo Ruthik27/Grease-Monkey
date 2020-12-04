@@ -23,16 +23,16 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final model model) {
-        holder.nametext.setText(model.getName());
-        holder.coursetext.setText(model.getCourse());
         holder.emailtext.setText(model.getEmail());
+        holder.nametext.setText(model.getName());
+        holder.origintext.setText(model.getOrigin());
         Glide.with(holder.img1.getContext()).load(model.getPurl()).into(holder.img1);
 
                     holder.img1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             AppCompatActivity activity = (AppCompatActivity)view.getContext();
-                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new dscfragment(model.getName(),model.getCourse(),model.getEmail(),model.getPurl())).addToBackStack(null).commit();
+                            activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new dscfragment()).addToBackStack(null).commit();
 
                         }
                     });
@@ -49,16 +49,16 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     public class myviewholder extends RecyclerView.ViewHolder {
 
         ImageView img1;
-        TextView nametext,coursetext,emailtext;
+        TextView emailtext,nametext,origintext;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
             img1=itemView.findViewById(R.id.img1);
-            nametext=itemView.findViewById(R.id.nametext);
-            coursetext=itemView.findViewById(R.id.coursetext);
             emailtext=itemView.findViewById(R.id.emailtext);
-
+            nametext=itemView.findViewById(R.id.nametext);
+            origintext=itemView.findViewById(R.id.origintext);
+            emailtext=itemView.findViewById(R.id.emailtext);
 
         }
     }

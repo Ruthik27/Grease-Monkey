@@ -4,13 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import com.bumptech.glide.Glide;
 
 
 public class infofragment extends Fragment {
@@ -21,17 +18,14 @@ public class infofragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String name,  course,  email,  purl;
+    String details;
 
     public infofragment() {
 
     }
 
-    public infofragment(String name, String course, String email, String purl) {
-        this.name=name;
-        this.course=course;
-        this.email=email;
-        this.purl=purl;
+    public infofragment(String details) {
+        this.details=details;
 
     }
 
@@ -59,22 +53,17 @@ public class infofragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_dscfragment, container, false);
-        ImageView imageholder=view.findViewById(R.id.imageholder);
-        TextView nameholder=view.findViewById(R.id.nameholder);
-        TextView courseholder=view.findViewById(R.id.courseholder);
-        TextView emailholder=view.findViewById(R.id.emailholder);
+        TextView detailsholder=view.findViewById(R.id.detailsholder);
 
-        nameholder.setText(name);
-        courseholder.setText(course);
-        emailholder.setText(email);
-        Glide.with(getContext()).load(purl).into(imageholder);
+        detailsholder.setText(details);
+
 
         return view;
     }
     public void onBackPressed(){
 
         AppCompatActivity activity = (AppCompatActivity)getContext();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new recfragment()).addToBackStack(null).commit();
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new dscfragment()).addToBackStack(null).commit();
 
 
     }

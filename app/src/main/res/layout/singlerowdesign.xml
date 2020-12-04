@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nametext"
-            android:text="Text is Demo name"
+            android:text="Text is Brand name"
             android:textStyle="bold"
             android:textSize="25dp"
             android:textColor="#000"
@@ -32,8 +32,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/coursetext"
-            android:text="Text is Course name"
+            android:id="@+id/origintext"
+            android:text="Text is Origin name"
             android:textStyle="bold"
             android:textSize="25dp"
             android:textColor="#000"
@@ -49,7 +49,7 @@
             android:textSize="25dp"
             android:textColor="#000"
             android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/coursetext"
+            android:layout_below="@+id/origintext"
             android:layout_marginLeft="10dp"/>
 
 

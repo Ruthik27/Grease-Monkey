@@ -21,30 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:id="@+id/nameholder"
+            android:id="@+id/detailsholder"
             android:text="Candidate Name"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#000"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:id="@+id/courseholder"
-            android:text="Candidate Course"
-            android:textSize="25dp"
-            android:textColor="#000"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:id="@+id/emailholder"
-            android:text="Candidate email"
-            android:textSize="25dp"
-            android:textColor="#000"/>
     </LinearLayout>
 
 
