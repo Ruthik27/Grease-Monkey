@@ -88,7 +88,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map=googleMap;
 
         for (int i=0;i<arrayList.size();i++){
-            map.addMarker(new MarkerOptions().position(arrayList.get(i)).title("Marker"));
+            map.addMarker(new MarkerOptions().position(arrayList.get(i)).title(String.valueOf(arrayList)));
             map.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
             map.moveCamera(CameraUpdateFactory.newLatLng(arrayList.get(i)));
         }
