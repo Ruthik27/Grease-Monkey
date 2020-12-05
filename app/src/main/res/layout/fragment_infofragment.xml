@@ -10,19 +10,42 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageholder"
-            android:layout_marginTop="40dp"
-            android:layout_width="240dp"
-            android:layout_height="228dp"
-            android:src="@color/common_google_signin_btn_text_dark_disabled"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/titleholder"
+            android:text="Title here"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:id="@+id/detailsholder"
-            android:text="Candidate Name"
+            android:id="@+id/aaholder"
+            android:text="source 1"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/abholder"
+            android:text="source 2"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/acholder"
+            android:text="source 3"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#000"/>

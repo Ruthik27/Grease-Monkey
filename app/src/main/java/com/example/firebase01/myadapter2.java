@@ -21,12 +21,12 @@ public class myadapter2 extends FirebaseRecyclerAdapter<model2,myadapter2.myview
 
     @Override
     protected void onBindViewHolder(@NonNull myviewholder2 holder, int position, @NonNull final model2 model) {
-    holder.detailstext.setText(model.getDetails());
-    holder.detailstext.setOnClickListener(new View.OnClickListener() {
+    holder.titletext.setText(model.getTitle());
+    holder.titletext.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             AppCompatActivity activity = (AppCompatActivity)v.getContext();
-            activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new infofragment()).addToBackStack(null).commit();
+            activity.getSupportFragmentManager().beginTransaction().replace(R.id.wrapper,new infofragment(model.getTitle(),model.getAa(),model.getAb(),model.getAc())).addToBackStack(null).commit();
         }
     });
     }
@@ -40,12 +40,12 @@ public class myadapter2 extends FirebaseRecyclerAdapter<model2,myadapter2.myview
 
     public class myviewholder2 extends RecyclerView.ViewHolder{
 
-        TextView detailstext;
+        TextView titletext;
 
         public myviewholder2(@NonNull View itemView) {
             super(itemView);
 
-            detailstext=itemView.findViewById(R.id.detailstext);
+            titletext=itemView.findViewById(R.id.titletext);
         }
     }
 

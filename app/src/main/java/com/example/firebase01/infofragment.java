@@ -18,20 +18,24 @@ public class infofragment extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String details;
+    String title, aa , ab, ac;
 
     public infofragment() {
 
     }
 
-    public infofragment(String details) {
-        this.details=details;
+    public infofragment(String title, String aa, String ab, String ac) {
+        this.title=title;
+        this.aa = aa;
+        this.ab = ab;
+        this.ac = ac;
 
     }
 
 
-    public static dscfragment newInstance(String param1, String param2) {
-        dscfragment fragment = new dscfragment();
+
+    public static infofragment newInstance(String param1, String param2) {
+        infofragment fragment = new infofragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -52,11 +56,16 @@ public class infofragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_dscfragment, container, false);
-        TextView detailsholder=view.findViewById(R.id.detailsholder);
+        View view = inflater.inflate(R.layout.fragment_infofragment, container, false);
+        TextView titleholder=view.findViewById(R.id.titleholder);
+        TextView aaholder = view.findViewById(R.id.aaholder);
+        TextView abholder = view.findViewById(R.id.abholder);
+        TextView acholder = view.findViewById(R.id.acholder);
 
-        detailsholder.setText(details);
-
+        titleholder.setText(title);
+        aaholder.setText(aa);
+        abholder.setText(ab);
+        acholder.setText(ac);
 
         return view;
     }

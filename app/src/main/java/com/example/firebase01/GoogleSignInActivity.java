@@ -41,7 +41,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
     public Button database1;
     public Button map1;
-    public Button web1;
 
     private GoogleMap mMap;
 
@@ -62,7 +61,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
         database1 = (Button) findViewById(R.id.button6);
         map1 = (Button) findViewById(R.id.button7);
-        web1 = (Button) findViewById(R.id.button8);
 
         
         database1.setOnClickListener(new View.OnClickListener(){
@@ -83,13 +81,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             }
         });
 
-        web1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GoogleSignInActivity.this, WebActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 
@@ -195,7 +187,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             findViewById(R.id.signOutAndDisconnect).setVisibility(View.VISIBLE);
             findViewById(R.id.button6).setVisibility(View.VISIBLE);
             findViewById(R.id.button7).setVisibility(View.VISIBLE);
-            findViewById(R.id.button8).setVisibility(View.VISIBLE);
+
         } else {
             mStatusTextView.setText(R.string.signed_out);
             mDetailTextView.setText(null);
@@ -204,7 +196,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             findViewById(R.id.signOutButton).setVisibility(View.GONE);
             findViewById(R.id.button6).setVisibility(View.GONE);
             findViewById(R.id.button7).setVisibility(View.GONE);
-            findViewById(R.id.button8).setVisibility(View.GONE);
+
 
         }
     }

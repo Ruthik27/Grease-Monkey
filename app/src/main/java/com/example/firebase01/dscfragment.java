@@ -56,7 +56,7 @@ public class dscfragment extends Fragment {
 
         FirebaseRecyclerOptions<model2> options2 =
                 new FirebaseRecyclerOptions.Builder<model2>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Brands").child("details"), model2.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Brands").child("Audi").child("details"), model2.class)
                         .build();
 
         adapter2 = new myadapter2(options2);

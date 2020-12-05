@@ -10,14 +10,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="125dp"
         android:padding="15dp"
         android:background="@color/cardview_dark_background">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/detailstext"
+            android:id="@+id/titletext"
             android:text="Text is Demo name to start"
             android:textStyle="bold"
             android:textSize="25dp"
