@@ -45,13 +45,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/emailtext"
+            android:autoLink="web" android:id="@+id/emailtext"
             android:text="Text is Email name"
             android:textSize="15dp"
             android:textColor="#000"
             android:layout_toRightOf="@+id/img1"
             android:layout_below="@+id/origintext"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:linksClickable="true" />
+
+
 
 
 
