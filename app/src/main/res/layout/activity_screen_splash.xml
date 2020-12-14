@@ -38,9 +38,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
 
-            android:text="HRK App"
+            android:text="Grease Monkey"
             android:textColor="@color/grey_300"
-            android:textSize="36sp"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -193,6 +193,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements
             mDetailTextView.setText(null);
 
             findViewById(R.id.signInButton).setVisibility(View.VISIBLE);
+            findViewById(R.id.disconnectButton).setVisibility(View.GONE);
             findViewById(R.id.signOutButton).setVisibility(View.GONE);
             findViewById(R.id.button6).setVisibility(View.GONE);
             findViewById(R.id.button7).setVisibility(View.GONE);

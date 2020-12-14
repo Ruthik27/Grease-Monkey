@@ -10,53 +10,52 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey_300"
+        android:layout_height="146dp"
+        android:background="@drawable/b6948af79d7c52c797323e031990051c"
         android:padding="15dp">
+
         <ImageView
+            android:id="@+id/img1"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@mipmap/ic_launcher"
-            android:id="@+id/img1"/>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/nametext"
-            android:text="Text is Brand name"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/origintext"
-            android:text="Text is Origin name"
-            android:textStyle="italic"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/nametext"
-            android:layout_marginLeft="10dp"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web" android:id="@+id/emailtext"
-            android:text="Text is Email name"
-            android:textSize="15dp"
-            android:textColor="#000"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/origintext"
             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:text="Text is Brand name"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/origintext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nametext"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:text="Text is Origin name"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/emailtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/origintext"
             android:layout_centerInParent="true"
-            android:linksClickable="true" />
-
-
-
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img1"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:text="Text is Email name"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
 
 
     </RelativeLayout>

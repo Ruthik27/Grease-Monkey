@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/allura</item>
         <item>@font/anton</item>
         <item>@font/audiowide</item>
         <item>@font/carter_one</item>
         <item>@font/fugaz_one</item>
+        <item>@font/galada</item>
+        <item>@font/lily_script_one</item>
+        <item>@font/oleo_script_swash_caps_bold</item>
     </array>
 </resources>

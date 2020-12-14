@@ -3,7 +3,7 @@
     android:id="@+id/main_layout"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/backg01"
     android:orientation="vertical"
     android:weightSum="0">
 
@@ -24,21 +24,23 @@
         <ImageView
             android:id="@+id/googleIcon"
             style="@style/ThemeOverlay.FirebaseIcon"
-            android:layout_width="246dp"
-            android:layout_height="159dp"
+            android:layout_width="291dp"
+            android:layout_height="223dp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/desc_firebase_lockup"
             android:scrollbarSize="@android:dimen/notification_large_icon_height"
-            android:src="@mipmap/firebase_lockup_400" />
+            android:src="@drawable/logo06" />
 
         <TextView
             android:id="@+id/titleText"
-            android:layout_width="265dp"
-            android:layout_height="wrap_content"
+            android:layout_width="411dp"
+            android:layout_height="106dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="@dimen/title_bottom_margin"
-            android:text="HRK App"
+            android:fontFamily="@font/audiowide"
+            android:text="Grease Monkey"
             android:textColor="#000"
+            android:textSize="45sp"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
         <TextView
@@ -54,6 +56,7 @@
             android:layout_width="248dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textColor="@color/green"
             tools:text="Firebase User ID: 123456789abc" />
 
         <TextView
@@ -61,6 +64,7 @@
             android:layout_width="377dp"
             android:layout_height="149dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="The unauthorized reproduction or distribution of this copyrighted work is illegal. Criminal copyright infringement, including gain, is investigated by the FBI and is punishable by up to 5 years in federal prison and a fine of $250,000."
             android:textSize="18sp" />
@@ -73,7 +77,7 @@
         android:id="@+id/signOutAndDisconnect"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.75"
         android:background="@color/grey_300"
         android:orientation="horizontal"
         android:layout_centerInParent="true"
@@ -88,40 +92,45 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:visibility="visible"
-            tools:visibility="gone" />
+            android:background="@drawable/custom02"
+            tools:visibility="gone"/>
 
         <Button
             android:id="@+id/signOutButton"
-            android:layout_width="wrap_content"
+            android:layout_width="171dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
+            android:layout_marginBottom="9dp"
             android:layout_toEndOf="@+id/disconnectButton"
             android:layout_toRightOf="@+id/disconnectButton"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_weight="2"
+            android:background="@drawable/custom"
             android:gravity="center"
             android:text="@string/sign_out"
             android:textColor="#000000"
             android:textSize="18sp"
+
             android:theme="@style/ThemeOverlay.MyDarkButton" />
 
         <Button
             android:id="@+id/disconnectButton"
-            android:layout_width="182dp"
+            android:layout_width="187dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="14dp"
+            android:layout_marginLeft="0dp"
             android:layout_marginBottom="9dp"
             android:layout_weight="2"
+            android:background="@drawable/custom"
             android:gravity="center"
             android:text="@string/disconnect"
+            android:textAllCaps="true"
             android:textColor="#050000"
             android:textSize="18sp"
             android:theme="@style/ThemeOverlay.MyDarkButton" />
