@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +17,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -39,8 +37,8 @@ public class GoogleSignInActivity extends AppCompatActivity implements
     private TextView mStatusTextView;
     private TextView mDetailTextView;
 
-    public Button database1;
-    public Button map1;
+    public ImageButton database1;
+    public ImageButton map1;
 
     private GoogleMap mMap;
 
@@ -59,8 +57,8 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
 
 
-        database1 = (Button) findViewById(R.id.button6);
-        map1 = (Button) findViewById(R.id.button7);
+        database1 = (ImageButton) findViewById(R.id.button6);
+        map1 = (ImageButton) findViewById(R.id.button7);
 
         
         database1.setOnClickListener(new View.OnClickListener(){
@@ -185,6 +183,8 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
             findViewById(R.id.signInButton).setVisibility(View.GONE);
             findViewById(R.id.signOutAndDisconnect).setVisibility(View.VISIBLE);
+            findViewById(R.id.signOutButton).setVisibility(View.VISIBLE);
+            findViewById(R.id.disconnectButton).setVisibility(View.VISIBLE);
             findViewById(R.id.button6).setVisibility(View.VISIBLE);
             findViewById(R.id.button7).setVisibility(View.VISIBLE);
 
@@ -220,9 +220,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements
 
     }
 
-    private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
-    }
 
 
 
