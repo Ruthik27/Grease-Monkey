@@ -41,7 +41,7 @@
             android:fontFamily="@font/audiowide"
             android:text="Grease Monkey"
             android:textColor="#000"
-            android:textSize="45sp"
+            android:textSize="40sp"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
         <TextView
@@ -63,9 +63,9 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="377dp"
-            android:layout_height="149dp"
+            android:layout_height="129dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="The unauthorized reproduction or distribution of this copyrighted work is illegal. Criminal copyright infringement, including gain, is investigated by the FBI and is punishable by up to 5 years in federal prison and a fine of $250,000."
             android:textSize="18sp" />
@@ -100,17 +100,13 @@
 
         <Button
             android:id="@+id/signOutButton"
-            android:layout_width="171dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="23dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginEnd="17dp"
-            android:layout_marginRight="17dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@+id/disconnectButton"
             android:layout_toRightOf="@+id/disconnectButton"
             android:layout_weight="2"
             android:background="@drawable/custom"
@@ -123,12 +119,12 @@
 
         <Button
             android:id="@+id/disconnectButton"
-            android:layout_width="187dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="8dp"
             android:layout_weight="2"
             android:background="@drawable/custom"
             android:gravity="center"
@@ -144,7 +140,7 @@
             android:layout_width="154dp"
             android:layout_height="65dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="Database"
             android:textSize="14sp"
@@ -158,7 +154,7 @@
             android:layout_height="65dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="80dp"
             android:layout_toEndOf="@+id/button6"
