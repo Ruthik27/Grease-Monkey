@@ -7,9 +7,13 @@
 ## Tech Stack-
 
 ![Java](https://img.shields.io/static/v1?style=for-the-badge&message=Java&color=007396&logo=Java&logoColor=FFFFFF&label=)
+<br/>
 ![Firebase](https://img.shields.io/static/v1?style=for-the-badge&message=Firebase&color=222222&logo=Firebase&logoColor=FFCA28&label=)
+<br/>
 ![Google Maps](https://img.shields.io/static/v1?style=for-the-badge&message=Google+Maps&color=4285F4&logo=Google+Maps&logoColor=FFFFFF&label=)
+<br/>
 ![Auth0](https://img.shields.io/static/v1?style=for-the-badge&message=Firebase-&nbsp;authentication&color=EB5424&logo=Auth0&logoColor=FFFFFF&label=)
+<br/>
 ![Google Cloud](https://img.shields.io/static/v1?style=for-the-badge&message=Firebase-&nbsp;Realtime&nbsp;database&color=222222&logo=Google+Cloud&logoColor=FFFFFF&label=)
 
 
