@@ -1,9 +1,9 @@
-<!---
+
 <div align="center">
   <h1>Grease Monkey</h1>
   <img src="images/launch.jpg" />
 </div>
---->
+
 ---
 ## Tech Stack-
 
