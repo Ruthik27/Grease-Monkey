@@ -1,8 +1,9 @@
+<!---
 <div align="center">
   <h1>Grease Monkey</h1>
   <img src="images/launch.jpg" />
 </div>
-
+--->
 ---
 ## Tech Stack-
 
@@ -16,8 +17,7 @@
 <br/>
 ![Google Cloud](https://img.shields.io/static/v1?style=for-the-badge&message=Firebase-&nbsp;Realtime&nbsp;database&color=222222&logo=Google+Cloud&logoColor=FFFFFF&label=)
 
-
-
+---
 
 - Grease Monkey Android Application
 <br/>
@@ -27,3 +27,33 @@
 <br/>
 - Automobile Service providing App
 <br/>
+---
+
+## POWER TO USER
+* Data available for **40+ international automobile companies**.
+* **Market price** for car parts and accessories.
+* Can also link you with the **companies official website**.
+* Can also show you the **nearby service providers**.
+* On one can click you can get the **fastest route** from your location to the nearby service provider.
+---
+    
+</div>
+<div align="center">
+  <img src="images/auth.jpg">
+</div>
+
+Connects you with the nearby service provider.
+
+Security:
+Verified by Google Security Services.
+Authenticated by Google Firebase.
+Creates logs and maintains analytics in Firebase.
+
+Connects you with the service providers.
+You just need to knowwhat you need, and the application will tell at what price and where you will get the product
+
+DATABASE
+GOOGLE MAPS
+SECURITY
+
+mid-term MINI PROJECT
