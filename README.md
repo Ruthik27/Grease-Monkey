@@ -1,4 +1,4 @@
-***mid-term MINI PROJECT***
+***ACADEMIC PROJECT 2020 - 2021***
 <div align="center">
   <h1>Grease Monkey</h1>
   <img src="images/launch.jpg" />
@@ -71,5 +71,8 @@ Google Maps
 
 ---
 Link for Screen Recording ["GOOGLE DRIVE"](https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view?usp=sharing)
-
+---
+***Contributors:***
+Kiran Lambate ;
+Harshal Nikam
 
