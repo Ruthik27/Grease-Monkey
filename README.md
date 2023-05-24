@@ -1,5 +1,5 @@
 **_ACADEMIC PROJECT 2020 - 2021_**
-
+<base target="_blank">
 <div align="center">
   <h1>Grease Monkey</h1>
   <img src="images/launch.jpg" />
@@ -79,11 +79,12 @@ Google Maps
 - On one can click you can get the fastest route from your location to the nearby service provider.
 
 ---
-
+[**Click Here to see Video Demonstration (01:45)**](https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view)
+<!--
 <h3>
-<a herf = "https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view" target = "_blank"> Click Here to see Video Demonstration (01:45)</a>
+<a herf = "https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view" > Click Here to see Video Demonstration (01:45)</a>
 </h3>
-
+-->
 **_Contributors:_**
 Kiran Lambate ;
 Harshal Nikam
