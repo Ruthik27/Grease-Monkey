@@ -1,4 +1,7 @@
 **_ACADEMIC PROJECT 2020 - 2021_**
+# Grease Monkey Android Application
+
+Grease Monkey is an automobile service-providing app that leverages the power of modern technologies to offer users a seamless and intuitive experience. Our app integrates data from over 44 international companies and provides a one-click solution to access automobile-related information.
 <base target="_blank">
 <div align="center">
   <h1>Grease Monkey</h1>
@@ -21,65 +24,67 @@
 
 ---
 
-## POWER TO USER
+## 🌐 Power to the User
 
-- Grease Monkey Android Application
-- 44+ international companies data used.
-- Tech used- “Firebase: Authentication, Realtime Database, Google Maps API”
-- Automobile Service providing App
+- Data from **44+ international companies**.
+- **One-click solution** for accessing various features.
+- Automobile service discovery and related functionalities.
 
 ---
 
-## AUTHENTICATION
-
-###Security:
+## 🛡 Security
 
 - Verified by **Google Security Services**.
 - Authenticated by **Google Firebase**.
-- Creates **logs** and maintains **analytics** in Firebase.
+- Creates logs and maintains analytics in Firebase.
 
-</div align = "center">
+<div align="center">
   <img src="images/auth.jpg" float ="right" height=800px width = 400px>
 </div>
 
 ---
 
-## USER INTERFACE
+## 🖥 User Interface
 
-ONE CLICK SOLUTION
+- **One-click solution** to access all functionalities.
+- Displays the logged-in user's email account.
+- Easy clicks to access the database and map interface.
+- Option to Sign Out or Disconnect from the application.
 
-- Shows user Logged email account.
-- easy clicks to access database and map interface.
-- Allows user to Sign Out / Disconnect from the Application
 
-</div>
-<div float="center">
+<div align="center">
   <img src="images/front.jpg" height=800px width = 400px>
 </div>
 
 ---
 
-## DATABASE & MAPS
+## 📊 Database & Maps
 
-</div>
+### Database
+
+- Data available for **40+ international automobile companies**.
+- Provides the **market price for car parts and accessories**.
+- Direct links to the **official websites** of automobile companies.
+
 <div align="center">
   <img src="images/data.jpg" height=800px width = 400px>
+</div>
+
+### Google Maps
+
+- Display **nearby service providers**.
+- Provides the **fastest route** from your location to the selected service provider.
+  
+<div align="center">
   <img src="images/map.jpg" height=800px width = 400px>
 </div>
 
-Database
-
-- Data available for 40+ international automobile companies.
-- Market price for car parts and accessories.
-- Can also link you with the companies official website.
-
-Google Maps
-
-- Can also show you the nearby service providers.
-- On one can click you can get the fastest route from your location to the nearby service provider.
-
 ---
+
+## 🎥 Video Demonstration
+
 [**Click Here to see Video Demonstration (01:45)**](https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view)
+
 <!--
 <h3>
 <a herf = "https://drive.google.com/file/d/1Z-cGFchU4nxIjDuNm4CxwwK5cN4ddzBS/view" > Click Here to see Video Demonstration (01:45)</a>
@@ -88,3 +93,6 @@ Google Maps
 **_Contributors:_**
 Kiran Lambate ;
 Harshal Nikam
+
+We hope you enjoy using Grease Monkey! For any feedback, issues, or contributions, please reach out.
+
